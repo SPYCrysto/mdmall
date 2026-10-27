@@ -1,0 +1,12 @@
+Q4. Experiment 4 – Latency Analysis
+
+Using Python, write a program to calculate the average, minimum, and maximum response time (RTT) from the given Ping readings. Comment on the network performance.
+
+Sample Dataset:
+
+Packet No. | Response Time (ms)
+1 | 20
+2 | 25
+3 | 18
+4 | 60
+5 | 27

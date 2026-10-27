@@ -1,0 +1,12 @@
+Q3. Experiment 3 – Wi-Fi Network Data Analysis
+
+Using Python, analyze the following given Wi-Fi network dataset. Write a code to identify the strongest and weakest signals based on RSSI and plot a bar chart comparing all networks.
+
+Sample Dataset:
+
+Network (SSID) | Frequency | Channel | RSSI (dBm)
+Network A | 2.4 GHz | 6 | -45 dBm
+Network B | 2.4 GHz | 11 | -68 dBm
+Network C | 5 GHz | 36 | -52 dBm
+Network D | 2.4 GHz | 1 | -80 dBm
+Network E | 5 GHz | 40 | -38 dBm

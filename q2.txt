@@ -1,0 +1,4 @@
+Q2. Experiment 2 – Basic Communication System Using Python
+
+To simulate a basic digital communication system (Transmitter, Channel with Noise, and Receiver) using Python and evaluate bit errors.
+(write a program to: 1. Generate a binary data  2.Introduce noise into the channel by changing bits. 3. Compare the transmitted and received binary data, display bit errors, and plot both signals.)

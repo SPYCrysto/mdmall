@@ -1,0 +1,13 @@
+Q5. Experiment 5 – Multipath Effects Analysis
+
+Using Python in VS Code, plot a line graph of Position versus RSSI from the given indoor measurement data. Identify the deep signal fluctuation (fade nulls) points and write your observations.
+
+Sample Dataset:
+
+Position (m) | RSSI (dBm)
+1 | -40
+2 | -48
+3 | -42
+4 | -65
+5 | -50
+6 | -72

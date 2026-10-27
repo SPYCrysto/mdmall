@@ -1,0 +1,3 @@
+Q6. Experiment 6 – Noise Analysis
+
+Using Python, generate a clean signal wave and add low and high levels of random noise. Plot and compare the three signals in subplots. Explain how noise affects signal quality.

@@ -1,0 +1,3 @@
+Q7. Experiment 7 – Network Simulation
+
+To design a Local Area Network (LAN) using Cisco Packet Tracer, configure static IP addresses, and verify connectivity using the Ping command.
