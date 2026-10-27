@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CodePath — Python Learning Track</title>
+<style>
+:root{color-scheme:dark;--bg:#0b1220;--panel:#111b2e;--panel2:#17243a;--text:#edf3ff;--muted:#91a2bd;--border:#263650;--accent:#78aaff;--green:#47d7a0;--code:#080e19}
+[data-theme=light]{color-scheme:light;--bg:#f3f6fc;--panel:#fff;--panel2:#f0f4fb;--text:#162239;--muted:#61718b;--border:#dce4f0;--accent:#245fca;--green:#09875e;--code:#f7f9fd}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:14px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}button,input{font:inherit}button{cursor:pointer;color:inherit}button:disabled{opacity:.42;cursor:not-allowed;filter:grayscale(.4)}
+.top{height:68px;padding:0 24px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);background:var(--panel);position:sticky;top:0;z-index:4}.brand{display:flex;align-items:center;gap:11px;font-size:17px;font-weight:800}.logo{width:36px;height:36px;border-radius:11px;background:linear-gradient(135deg,#78aaff,#8b7cff);display:grid;place-items:center;color:#fff}.brand small{display:block;font-size:10px;color:var(--muted);letter-spacing:1px}.topright{display:flex;gap:8px;align-items:center}.btn{border:1px solid var(--border);background:var(--panel2);border-radius:10px;padding:9px 12px;font-weight:700}.primary{background:var(--accent);color:#081327;border-color:transparent}.shell{max-width:1480px;margin:auto;padding:24px;display:grid;grid-template-columns:290px minmax(0,1fr);gap:22px}.course,.curriculum,.panel,.stat{background:var(--panel);border:1px solid var(--border);border-radius:16px;overflow:hidden}.course{padding:18px;margin-bottom:14px;background:linear-gradient(140deg,var(--panel),var(--panel2))}.eyebrow{font-size:10px;letter-spacing:1.5px;color:var(--accent);font-weight:850}.course h2{font-size:20px;margin:7px 0}.muted{color:var(--muted)}.small{font-size:12px}.progress{height:7px;background:var(--border);border-radius:9px;overflow:hidden;margin:16px 0 8px}.progress span{display:block;width:0;height:100%;background:linear-gradient(90deg,var(--accent),var(--green));transition:width .25s}.progressmeta{display:flex;justify-content:space-between;color:var(--muted);font-size:11px}.curriculumhead{padding:15px;display:flex;justify-content:space-between}.search{width:calc(100% - 24px);margin:0 12px 12px;background:var(--bg);color:var(--text);border:1px solid var(--border);padding:10px;border-radius:9px}.files{padding:0 8px 10px}.file{display:flex;align-items:center;gap:9px;width:100%;text-align:left;padding:10px;border:1px solid transparent;border-radius:10px;background:transparent;margin:3px 0}.file.active{background:var(--panel2);border-color:var(--border);box-shadow:inset 3px 0 var(--accent)}.fileicon{width:34px;height:35px;display:grid;place-items:center;border-radius:9px;background:#1d3b38;color:var(--green);font-size:10px;font-weight:900;flex-shrink:0}.filetext{min-width:0;flex:1}.filetext strong,.filetext span{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.filetext strong{font-size:12px}.filetext span{font-size:11px;color:var(--muted)}.filecheck{color:var(--green)}.sidefoot{padding:12px 15px;border-top:1px solid var(--border);font-size:11px;color:var(--muted)}
+.welcome{display:flex;justify-content:space-between;align-items:flex-start;gap:15px;margin:2px 0 18px}.welcome h1{font-size:clamp(25px,3vw,34px);line-height:1.15;letter-spacing:-1px;margin:7px 0}.welcome p{color:var(--muted);max-width:680px;margin:0}.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:17px}.stat{padding:14px;display:flex;align-items:center;gap:12px}.staticon{width:37px;height:37px;display:grid;place-items:center;background:var(--panel2);border-radius:10px;font-size:17px}.stat small{display:block;color:var(--muted);font-size:11px}.stat strong{font-size:19px}.panel{box-shadow:0 18px 50px #02061722}.lessonhead{padding:21px 23px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;gap:15px}.tags{display:flex;gap:7px;flex-wrap:wrap}.tag{font-size:10px;font-weight:850;letter-spacing:.5px;border-radius:6px;padding:5px 8px;background:var(--panel2);color:var(--muted)}.tag.blue{color:var(--accent)}.tag.green{color:var(--green)}.lessonhead h2{font-size:24px;margin:10px 0 5px;line-height:1.2}.desc{white-space:pre-wrap;color:var(--muted);font-size:13px}.actions{display:flex;gap:8px;align-items:flex-start;flex-wrap:wrap;justify-content:flex-end}.lessonbody{padding:20px 23px}.filebar{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 12px;background:var(--panel2);border:1px solid var(--border);border-bottom:0;border-radius:11px 11px 0 0}.filebar strong{font-size:12px}.filebar .right{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:11px}.mini{padding:6px 9px;font-size:11px;border:1px solid var(--border);background:var(--panel);border-radius:7px}.codewrap{border:1px solid var(--border);background:var(--code);border-radius:0 0 11px 11px;overflow:hidden}.codewrap pre{margin:0;padding:18px;overflow:auto;max-height:560px;min-height:260px;tab-size:4}pre code{font:12.5px/1.75 ui-monospace,Consolas,monospace;white-space:pre}.empty{padding:30px 20px;text-align:center;color:var(--muted)}.errorbox{padding:22px;text-align:left}.errorbox h3{margin-top:0;color:#ff9ca8}.errorbox li{margin:6px 0;overflow-wrap:anywhere}.errorbox a{color:var(--accent)}.errorbox code{white-space:normal;overflow-wrap:anywhere}.bottom{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:16px}.footer{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 22px;background:var(--bg);border-top:1px solid var(--border);color:var(--muted);font-size:11px}.toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,20px);opacity:0;transition:.2s;pointer-events:none;background:var(--text);color:var(--bg);padding:10px 15px;border-radius:9px;z-index:9;font-weight:800}.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:900px){.shell{grid-template-columns:250px 1fr;padding:14px;gap:14px}.lessonhead{flex-direction:column}.actions{justify-content:flex-start}}@media(max-width:650px){.top{padding:10px;height:auto}.brand{font-size:14px}.brand small{display:none}.shell{grid-template-columns:1fr;padding:10px}.files{display:grid;grid-template-columns:1fr 1fr}.file{padding:8px 6px;gap:6px}.fileicon{width:29px;height:31px}.welcome{flex-direction:column}.stats{gap:6px}.stat{padding:10px 8px}.staticon{display:none}.stat strong{font-size:16px}.lessonhead{padding:16px}.lessonbody{padding:12px}.footer{padding:12px}.filebar .right span{display:none}}
+</style>
+</head>
+<body>
+<header class="top"><div class="brand"><div class="logo">{ }</div><div>CodePath <small>PYTHON LEARNING TRACK</small></div></div><div class="topright"><span id="topPct" class="muted small">0% complete</span><button class="btn" id="themeBtn">☼ / ☾</button><button class="btn" id="refreshBtn">↻ Refresh files</button></div></header>
+<div class="shell">
+<aside>
+  <section class="course"><div class="eyebrow">YOUR COURSE</div><h2>Python Practice Lab</h2><div class="muted small">Read the source, copy the solution, and mark each lesson complete.</div><div class="progress"><span id="bar"></span></div><div class="progressmeta"><span id="progressLabel">0 of 5 complete</span><b id="pct">0%</b></div></section>
+  <section class="curriculum"><div class="curriculumhead"><b>COURSE CONTENT</b><span class="muted small" id="lessonCount">5 LESSONS</span></div><input id="search" class="search" placeholder="⌕  Search questions…" type="search"><nav id="fileList" class="files"></nav><div class="sidefoot">✓ Completed &nbsp; · &nbsp; ○ In progress</div></section>
+</aside>
+<main>
+  <div class="welcome"><div><div class="eyebrow">LEARN BY DOING</div><h1>Keep your coding streak alive.</h1><p>Choose a lesson from the course list. Its Python source appears below with copy and download controls.</p></div><button class="btn" id="resetBtn">↺ Reset progress</button></div>
+  <section class="stats"><div class="stat"><div class="staticon">▤</div><div><small>Available files</small><strong id="available">0</strong></div></div><div class="stat"><div class="staticon">✓</div><div><small>Completed</small><strong id="doneCount">0 / 5</strong></div></div><div class="stat"><div class="staticon">⌘</div><div><small>Current lesson</small><strong id="currentStat">Q2</strong></div></div></section>
+  <section class="panel"><div class="lessonhead"><div><div class="tags"><span class="tag blue" id="lessonTag">LESSON 01</span><span class="tag" id="fileTag">q2.py</span><span class="tag green" id="doneTag" hidden>COMPLETED</span></div><h2 id="lessonTitle">Loading lesson…</h2><div class="desc" id="lessonDesc"></div></div><div class="actions"><button class="btn" id="copyBtn" disabled>▣ Copy code</button><button class="btn" id="downloadBtn" disabled>↓ Download .py</button></div></div>
+  <div class="lessonbody"><div class="filebar"><strong>🐍 <span id="fileName">q2.py</span></strong><div class="right"><span id="codeMeta">Loading source…</span><button class="mini" id="copyMini" disabled>▣ Copy</button></div></div><div class="codewrap" id="codeWrap"><pre><code>Loading Python source…</code></pre></div><div class="bottom"><span class="muted small" id="hint">Read the code, try it yourself, then mark complete.</span><button class="btn" id="completeBtn">○ Mark complete</button></div></div>
+  <div class="footer"><span id="footerText">Progress is saved in this browser.</span><button class="btn primary" id="nextBtn">Next lesson →</button></div></section>
+</main>
+</div><div id="toast" class="toast"></div>
+<script>
+(() => {
+  // Keep these IDs aligned with your qN.py filenames.
+  const IDS=[2,3,4,5,6];
+  const $=id=>document.getElementById(id);
+  let lessons=[],current=2,done=new Set();
+  try{done=new Set(JSON.parse(localStorage.getItem('codepath-progress-v2')||'[]'));}catch(e){}
+  const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const candidates=name=>{
+    // Always try the file beside index.html first. Only build root-based
+    // URLs when running on http(s); location.origin is "null" for file://.
+    const urls=[new URL(name,document.baseURI).href];
+    if(location.protocol==='http:' || location.protocol==='https:'){
+      urls.push(new URL('/'+name,location.origin).href);
+      urls.push(new URL('/public/'+name,location.origin).href);
+    }
+    return [...new Set(urls)];
+  };
+  async function fetchText(name){
+    const failures=[];
+    for(const url of candidates(name)){
+      try{
+        const r=await fetch(url,{cache:'no-store'});
+        if(r.ok)return {text:await r.text(),url};
+        failures.push(`${r.status} ${url}`);
+      }catch(e){failures.push(`${url} — ${e.message||'fetch failed'}`);}
+    }
+    throw new Error(failures.join('\n'));
+  }
+  function toast(msg){$('toast').textContent=msg;$('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),1900);}
+  async function load(){
+    $('fileList').innerHTML='<div class="empty">Loading files…</div>';
+    if(location.protocol==='file:'){
+      $('fileList').innerHTML='<div class="empty">Open this page through a local web server to load sibling files.</div>';
+      $('available').textContent='—';
+      $('codeWrap').innerHTML='<div class="errorbox"><h3>Start a local server first</h3><p>Browsers block JavaScript from fetching sibling files when you open <code>index.html</code> by double-clicking it (<code>file://</code>).</p><p>In VS Code, open the terminal in the folder containing <code>index.html</code> and <code>q2.py</code>, then run:</p><pre><code>py -m http.server 8000</code></pre><p>Then open <a href="http://localhost:8000/">http://localhost:8000/</a>. Keep all the <code>qN.py</code> and optional <code>qN.txt</code> files in the same folder as <code>index.html</code>.</p></div>';
+      $('lessonTitle').textContent='Local server required';
+      $('lessonDesc').textContent='Your project can be tested locally without deploying to Vercel.';
+      $('codeMeta').textContent='Waiting for localhost';
+      ['copyBtn','copyMini','downloadBtn'].forEach(id=>$(id).disabled=true);
+      return;
+    }
+    const loaded=await Promise.all(IDS.map(async(id,index)=>{
+      try{
+        const result=await fetchText(`q${id}.py`);
+        let title=`Question ${id}`,description=`Python practice question ${id}.`;
+        try{const txt=(await fetchText(`q${id}.txt`)).text.trim();if(txt){const lines=txt.split(/\r?\n/);title=lines[0].trim()||title;description=lines.slice(1).join('\n').trim()||description;}}catch(e){}
+        return {id,index,title,description,code:result.text,url:result.url,missing:false};
+      }catch(e){return {id,index,title:`Question ${id}`,description:'Python file could not be fetched.',code:'',missing:true,error:e.message};}
+    }));
+    lessons=loaded;
+    $('lessonCount').textContent=`${IDS.length} LESSONS`;
+    $('available').textContent=lessons.filter(x=>!x.missing).length;
+    if(!lessons.some(x=>x.id===current))current=(lessons.find(x=>!x.missing)||lessons[0]).id;
+    renderList();renderLesson(current);progress();
+  }
+  function renderList(){
+    const q=$('search').value.trim().toLowerCase();
+    const shown=lessons.filter(l=>(`q${l.id} ${l.title} ${l.description}`).toLowerCase().includes(q));
+    $('fileList').innerHTML=shown.map(l=>`<button class="file ${l.id===current?'active':''}" data-id="${l.id}"><span class="fileicon">${l.missing?'!':'PY'}</span><span class="filetext"><strong>Q${String(l.index+1).padStart(2,'0')} · ${esc(l.title)}</strong><span>q${l.id}.py${l.missing?' · not found':''}</span></span><span class="filecheck">${done.has(l.id)?'✓':'○'}</span></button>`).join('')||'<div class="empty">No matching questions.</div>';
+    $('fileList').querySelectorAll('[data-id]').forEach(b=>b.addEventListener('click',()=>{current=Number(b.dataset.id);renderLesson(current);renderList();}));
+  }
+  function renderLesson(id){
+    const l=lessons.find(x=>x.id===id);if(!l)return;
+    $('lessonTag').textContent=`LESSON ${String(l.index+1).padStart(2,'0')}`;$('fileTag').textContent=`q${id}.py`;$('fileName').textContent=`q${id}.py`;
+    $('lessonTitle').textContent=l.title;$('lessonDesc').textContent=l.description;$('currentStat').textContent=`Q${id}`;$('doneTag').hidden=!done.has(id);
+    $('completeBtn').textContent=done.has(id)?'✓ Completed · Undo':'○ Mark complete';
+    $('completeBtn').classList.toggle('primary',done.has(id));
+    $('nextBtn').textContent=l.index===lessons.length-1?'Course finished ✓':'Next lesson →';
+    const available=!l.missing;
+    ['copyBtn','copyMini','downloadBtn'].forEach(id=>$(id).disabled=!available);
+    if(available){
+      $('codeWrap').innerHTML='<pre><code id="sourceCode"></code></pre>';$('sourceCode').textContent=l.code;
+      $('codeMeta').textContent=`${l.code.split(/\r?\n/).length} lines · ${new Blob([l.code]).size} bytes`;
+      $('hint').textContent='Source loaded. Copy it, download it, or mark this lesson complete.';
+    }else{
+      $('codeWrap').innerHTML=`<div class="errorbox"><h3>Can't load q${id}.py</h3><p>The HTML page is working, but the deployed site is not serving this Python file. The copy/download buttons are disabled because there is no source code to copy.</p><p><b>Most reliable fix for Vercel:</b> place the static files together in a <code>public</code> directory, like this:</p><pre><code>public/
+  index.html
+  q2.py
+  q2.txt
+  q3.py
+  q3.txt
+  q4.py
+  q5.py
+  q6.py</code></pre><p>Commit and push those files, then redeploy. After deployment, open this direct URL to verify the file exists: <a href="${esc(new URL('/q'+id+'.py',location.origin).href)}" target="_blank" rel="noopener">/${'q'+id+'.py'}</a></p><details><summary>Fetch diagnostics</summary><pre><code>${esc(l.error)}</code></pre></details></div>`;
+      $('codeMeta').textContent='File not found';$('hint').textContent='Fix the static file deployment, then click Refresh files.';
+    }
+    $('footerText').textContent=done.has(id)?'Lesson complete — progress saved in this browser.':'Progress is saved in this browser.';
+    renderList();
+  }
+  function progress(){
+    const total=lessons.length,complete=lessons.filter(l=>done.has(l.id)).length,pct=total?Math.round(complete/total*100):0;
+    $('bar').style.width=pct+'%';$('progressLabel').textContent=`${complete} of ${total} complete`;$('pct').textContent=pct+'%';$('topPct').textContent=pct+'% complete';$('doneCount').textContent=`${complete} / ${total}`;
+    try{localStorage.setItem('codepath-progress-v2',JSON.stringify([...done]));}catch(e){}
+    renderList();
+  }
+  async function copy(){
+    const l=lessons.find(x=>x.id===current);if(!l||l.missing){toast('Source unavailable — deploy the .py file first.');return;}
+    try{await navigator.clipboard.writeText(l.code);toast(`Copied q${l.id}.py`);}
+    catch(e){const ta=document.createElement('textarea');ta.value=l.code;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();const ok=document.execCommand('copy');ta.remove();toast(ok?`Copied q${l.id}.py`:'Copy failed. Try HTTPS or select the code manually.');}
+  }
+  function download(){
+    const l=lessons.find(x=>x.id===current);if(!l||l.missing){toast('Source unavailable — deploy the .py file first.');return;}
+    const a=document.createElement('a'),url=URL.createObjectURL(new Blob([l.code],{type:'text/x-python;charset=utf-8'}));a.href=url;a.download=`q${l.id}.py`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+  }
+  $('copyBtn').addEventListener('click',copy);$('copyMini').addEventListener('click',copy);$('downloadBtn').addEventListener('click',download);
+  $('completeBtn').addEventListener('click',()=>{if(done.has(current))done.delete(current);else done.add(current);progress();renderLesson(current);toast(done.has(current)?'Lesson completed':'Completion undone');});
+  $('nextBtn').addEventListener('click',()=>{const i=lessons.findIndex(l=>l.id===current);if(i<lessons.length-1){current=lessons[i+1].id;renderLesson(current);window.scrollTo({top:0,behavior:'smooth'});}else toast('You reached the end of the course!');});
+  $('refreshBtn').addEventListener('click',load);$('search').addEventListener('input',renderList);
+  $('themeBtn').addEventListener('click',()=>{document.documentElement.dataset.theme=document.documentElement.dataset.theme==='light'?'dark':'light';});
+  $('resetBtn').addEventListener('click',()=>{if(confirm('Reset all course progress?')){done.clear();progress();renderLesson(current);toast('Progress reset');}});
+  load();
+})();
+</script>
+</body></html>
